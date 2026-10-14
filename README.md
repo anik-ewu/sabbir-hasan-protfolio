@@ -2,9 +2,9 @@
 
 Personal portfolio. Plain HTML, CSS and JS — no build step.
 
-- `index.html` — content
+- `index.html` — content: each "file" in the editor is a `<section class="pane">`
 - `styles.css` — styles (light/dark via `prefers-color-scheme` + toggle)
-- `main.js` — reveal animations, theme toggle, gallery lightbox
+- `main.js` — tabs, terminal commands, ⌘P file palette, dot field, theme
 - `assets/` — images and résumé PDF
 
 Run locally:

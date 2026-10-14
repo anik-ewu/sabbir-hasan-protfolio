@@ -2,315 +2,530 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Sabbir Hasan — Software Engineer</title>
   <meta name="description" content="MD Sabbir Hasan — backend-focused software engineer building distributed .NET services on Azure. Competitive programmer, 2000+ problems solved.">
   <meta property="og:title" content="Sabbir Hasan — Software Engineer">
   <meta property="og:description" content="Distributed .NET services, CQRS and event-driven systems on Azure. Competitive programmer.">
   <meta property="og:image" content="assets/img/team-stairs.jpg">
-  <meta name="theme-color" content="#f7f7f8">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%230e0e12'/><text x='50%' y='54%' text-anchor='middle' dominant-baseline='middle' font-family='system-ui,sans-serif' font-weight='600' font-size='36' fill='%23f7f7f8'>s</text><circle cx='47' cy='45' r='5' fill='%235b5bd6'/></svg>">
+  <meta name="theme-color" content="#0b0b10">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%230b0b10'/><text x='50%' y='54%' text-anchor='middle' dominant-baseline='middle' font-family='ui-monospace,monospace' font-weight='700' font-size='26' fill='%239b9dff'>&lt;/&gt;</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..800&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script>
     try { const t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
   </script>
 </head>
 <body>
-  <header class="nav">
-    <a href="#top" class="nav__mark" aria-label="Home">sh<span class="dot"></span></a>
-    <nav class="nav__links" aria-label="Sections">
-      <a href="#about"><span>A</span>About</a>
-      <a href="#work"><span>B</span>Work</a>
-      <a href="#projects"><span>C</span>Projects</a>
-      <a href="#contests"><span>D</span>Contests</a>
-      <a href="#contact"><span>E</span>Contact</a>
-    </nav>
-    <button class="theme" id="theme" aria-label="Toggle dark mode">
-      <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9z" fill="currentColor"/></svg>
+<div class="ide" id="ide">
+
+  <!-- TITLE BAR -->
+  <header class="titlebar">
+    <div class="lights" aria-hidden="true"><i></i><i></i><i></i></div>
+    <button class="burger" id="burger" aria-label="Toggle file explorer"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+    <nav class="menu" aria-hidden="true"><span>File</span><span>Edit</span><span>View</span><span>Go</span><span>Run</span><span>Terminal</span><span>Help</span></nav>
+    <button class="omnibox" id="omnibox" aria-label="Search files">
+      <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m16 16 4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      <span>sabbir-hasan — portfolio</span>
+      <kbd>⌘P</kbd>
     </button>
+    <div class="titlebar__right">
+      <button class="iconbtn" id="themeBtn" aria-label="Toggle light and dark theme" title="Toggle theme">
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9z" fill="currentColor"/></svg>
+      </button>
+    </div>
   </header>
 
-  <main id="top">
-    <!-- HERO -->
-    <section class="hero-wrap">
-    <canvas class="field" id="field" aria-hidden="true"></canvas>
-    <div class="hero wrap">
-      <p class="eyebrow mono intro" style="--d:0">Software Engineer · Dhaka, Bangladesh</p>
-      <h1 class="hero__title">
-        <span class="line"><span style="--d:1">Sabbir Hasan</span></span>
-        <span class="line"><em style="--d:2">builds systems that</em></span>
-        <span class="line"><span style="--d:3"><em>get </em><span class="ac">Accepted.</span></span></span>
-      </h1>
-      <div class="hero__grid">
-        <p class="hero__lede intro" style="--d:5">
-          Backend-focused engineer with 5+ years building and operating enterprise .NET services
-          for Swiss insurers — distributed REST APIs, CQRS and event-driven architecture on Azure,
-          with production on-call ownership. Competitive programmer at heart.
-        </p>
-        <div class="judge intro" style="--d:6" aria-label="Submission log">
-          <div class="judge__head mono"><span>#</span><span>Problem</span><span>Verdict</span></div>
-          <ol class="judge__rows mono" id="judge">
-            <li><span>01</span><span>Ship EcoHub backend</span><b>Accepted</b></li>
-            <li><span>02</span><span>Halve deploy time</span><b>Accepted</b></li>
-            <li><span>03</span><span>Solve 2000+ problems</span><b>Accepted</b></li>
-            <li><span>04</span><span>Mentor juniors</span><b>Accepted</b></li>
-            <li><span>05</span><span>Next challenge</span><b class="pending">Running<i>…</i></b></li>
-          </ol>
-        </div>
-      </div>
-      <div class="hero__cta intro" style="--d:7">
-        <a class="btn btn--solid magnetic" href="#contact">Get in touch</a>
-        <a class="btn magnetic" href="assets/sabbir_hasan_resume.pdf" target="_blank" rel="noopener">Résumé ↗</a>
-      </div>
-      <a class="scroll-cue mono intro" style="--d:9" href="#about" aria-label="Scroll to About"><i></i>scroll</a>
+  <!-- ACTIVITY BAR -->
+  <aside class="activity" aria-label="Activity bar">
+    <button class="act is-on" data-act="explorer" title="Explorer" aria-label="Explorer">
+      <svg viewBox="0 0 24 24" width="22" height="22"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M14 3v5h5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+    </button>
+    <button class="act" data-act="search" title="Search files (⌘P)" aria-label="Search files">
+      <svg viewBox="0 0 24 24" width="22" height="22"><circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="m16 16 4.5 4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    </button>
+    <a class="act" href="https://github.com/anik-ewu" target="_blank" rel="noopener" title="Source control — GitHub" aria-label="GitHub">
+      <svg viewBox="0 0 24 24" width="22" height="22"><circle cx="6" cy="5.5" r="2.2" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="6" cy="18.5" r="2.2" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="18" cy="8" r="2.2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M6 7.7v8.6M18 10.2c0 4-6 3-11 6.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+    </a>
+    <button class="act" data-act="run" title="Run (dotnet run)" aria-label="Run">
+      <svg viewBox="0 0 24 24" width="22" height="22"><path d="M7 4.5v15l12-7.5z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+    </button>
+    <button class="act" data-act="terminal" title="Toggle terminal (Ctrl+`)" aria-label="Toggle terminal">
+      <svg viewBox="0 0 24 24" width="22" height="22"><rect x="3" y="4.5" width="18" height="15" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="m7 9 3 3-3 3M12.5 15H17" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    </button>
+    <span class="act__spacer"></span>
+    <a class="act" href="https://www.linkedin.com/in/sabbir-hasan-anik-2433a614b/" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn">
+      <svg viewBox="0 0 24 24" width="22" height="22"><circle cx="12" cy="8.5" r="3.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M5 20c.8-3.6 3.6-5.5 7-5.5s6.2 1.9 7 5.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    </a>
+  </aside>
+
+  <!-- EXPLORER -->
+  <aside class="explorer" id="explorer" aria-label="File explorer">
+    <p class="explorer__title">Explorer</p>
+    <p class="explorer__root"><span class="chev">▾</span> SABBIR-HASAN</p>
+    <ul class="tree" id="tree">
+      <li><button class="file" data-file="program"><i class="ic ic-cs"></i>Program.cs</button></li>
+      <li><button class="file" data-file="about"><i class="ic ic-md"></i>About.md</button></li>
+      <li><button class="file" data-file="experience"><i class="ic ic-cs"></i>Experience.cs</button></li>
+      <li class="folder is-open">
+        <button class="folder__btn" aria-expanded="true"><span class="chev">▾</span><i class="ic ic-dir"></i>Projects</button>
+        <ul>
+          <li><button class="file" data-file="projects"><i class="ic ic-md"></i>README.md</button></li>
+          <li><button class="file" data-file="opendxp"><i class="ic ic-proj"></i>OpenDXP.csproj</button></li>
+          <li><button class="file" data-file="feemanager"><i class="ic ic-proj"></i>FeeManager.csproj</button></li>
+          <li><button class="file" data-file="flagmaster"><i class="ic ic-proj"></i>FlagMaster.csproj</button></li>
+          <li><button class="file" data-file="devforabuck"><i class="ic ic-proj"></i>DevForABuck.csproj</button></li>
+          <li><button class="file" data-file="diagnostic"><i class="ic ic-html"></i>DiagnosticCenter.html</button></li>
+        </ul>
+      </li>
+      <li><button class="file" data-file="skills"><i class="ic ic-json"></i>appsettings.json</button></li>
+      <li><button class="file" data-file="contests"><i class="ic ic-log"></i>Contests.log</button></li>
+      <li><button class="file" data-file="contact"><i class="ic ic-http"></i>Contact.http</button></li>
+      <li><button class="file" data-file="resume"><i class="ic ic-pdf"></i>Resume.pdf</button></li>
+    </ul>
+    <div class="explorer__foot">
+      <p class="mono">Tip: press <kbd>⌘P</kbd> to jump to a file, or type <code>help</code> in the terminal.</p>
     </div>
-    </section>
+  </aside>
+  <div class="scrim" id="scrim"></div>
 
-    <!-- ABOUT -->
-    <section id="about" class="section wrap">
-      <header class="section__head reveal"><span class="letter">A</span><h2>About</h2></header>
-      <div class="about">
-        <p class="about__big reveal">
-          I like problems with a clear verdict. At work that means services that stay up,
-          designs that survive review, and deploys that are boring. Off the clock it means
-          a contest clock running down and one more test case to pass.
-        </p>
-        <dl class="stats reveal">
-          <div><dt>5+</dt><dd>years shipping .NET in production</dd></div>
-          <div><dt>2000+</dt><dd>competitive programming problems solved</dd></div>
-          <div><dt>3×</dt><dd>ACM ICPC Dhaka Regional</dd></div>
-          <div><dt>150+</dt><dd>volunteer programming classes taught</dd></div>
-        </dl>
-      </div>
-    </section>
+  <!-- EDITOR -->
+  <main class="editor" id="editor">
+    <div class="tabs" id="tabs" role="tablist" aria-label="Open files"></div>
+    <div class="crumbs mono" id="crumbs"></div>
+    <div class="scroll" id="scroll">
 
-    <!-- WORK -->
-    <section id="work" class="section wrap">
-      <header class="section__head reveal"><span class="letter">B</span><h2>Work</h2></header>
-      <article class="job reveal">
-        <div class="job__meta">
-          <p class="mono muted">May 2021 — Present</p>
-          <p class="mono muted">Dhaka, BD</p>
-        </div>
-        <div class="job__body">
-          <h3>Software Engineer <span class="muted">at</span> SELISE Digital Platforms</h3>
-          <p class="job__intro">
-            Core engineer on <strong>EcoHub</strong>, an insurance platform used by top Swiss insurers —
-            owning backend service design and leading the Angular client that integrates it.
-          </p>
-          <ul class="ticks">
-            <li>Built scalable backend services and REST APIs in C#/.NET, applying CQRS, event-driven architecture and Domain-Driven Design across distributed services.</li>
-            <li>Cut build &amp; deploy time by <mark>50%</mark> by isolating translation delivery into its own pipeline (ngx-translate, POEditor).</li>
-            <li>Held on-call for Swiss client deployments — diagnosing incidents with Application Insights and Seq structured logs.</li>
-            <li>Automated cross-system data sync with Azure Functions and a HubSpot CRM integration.</li>
-            <li>Authored technical design docs and validated them with UI/UX and the client before implementation.</li>
-            <li>Mentored 3 junior engineers, owned code review and merge quality, ran sprint releases on Azure DevOps.</li>
-          </ul>
-          <p class="chips"><span>C#</span><span>.NET</span><span>CQRS</span><span>DDD</span><span>Azure</span><span>Angular</span><span>Cosmos DB</span><span>MongoDB</span></p>
-        </div>
-      </article>
-      <article class="job reveal">
-        <div class="job__meta">
-          <p class="mono muted">2016 — 2021</p>
-          <p class="mono muted">Dhaka, BD</p>
-        </div>
-        <div class="job__body">
-          <h3>B.Sc. in CSE <span class="muted">at</span> East West University</h3>
-          <p class="job__intro">Plus <strong>Microsoft Certified: Azure Fundamentals (AZ-900)</strong>, July 2025.</p>
-        </div>
-      </article>
-    </section>
-
-    <!-- PROJECTS -->
-    <section id="projects" class="section wrap">
-      <header class="section__head reveal"><span class="letter">C</span><h2>Projects</h2></header>
-
-      <article class="project reveal">
-        <div class="project__text">
-          <p class="mono muted">01 / Headless CMS + DXP</p>
-          <h3>OpenDXP</h3>
-          <p>
-            A digital experience platform on Clean Architecture with CQRS (MediatR): draft → publish versioning,
-            a REST delivery API and OpenIddict OIDC auth with PKCE, refresh-token rotation and resource-based policies.
-          </p>
-          <p>
-            A Kafka transactional outbox fans one <code>PagePublished</code> event out to five independent consumers.
-            Audience targeting uses SHA-256 visitor bucketing for A/B splits; pgvector powers related-page search;
-            a Helm chart was verified end to end on a live cluster.
-          </p>
-          <p class="chips"><span>.NET 8</span><span>Angular 20</span><span>PostgreSQL</span><span>Redis</span><span>Kafka</span><span>pgvector</span><span>Kubernetes</span></p>
-          <a class="link" href="https://github.com/anik-ewu/open-dxp-project" target="_blank" rel="noopener">View on GitHub ↗</a>
-        </div>
-        <figure class="fanout" aria-label="One PagePublished event fans out to five consumers">
-          <svg viewBox="0 0 360 300" role="img">
-            <defs>
-              <marker id="arr" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 8 4 0 8z" fill="currentColor"/></marker>
-            </defs>
-            <g class="fanout__src">
-              <rect x="10" y="126" width="118" height="48" rx="10"/>
-              <text x="69" y="148" text-anchor="middle" class="t1">PagePublished</text>
-              <text x="69" y="164" text-anchor="middle" class="t2">outbox → kafka</text>
-            </g>
-            <g class="fanout__lines" marker-end="url(#arr)">
-              <path d="M128 150 C 180 150, 180 34, 210 34"/>
-              <path d="M128 150 C 180 150, 180 92, 210 92"/>
-              <path d="M128 150 L 210 150"/>
-              <path d="M128 150 C 180 150, 180 208, 210 208"/>
-              <path d="M128 150 C 180 150, 180 266, 210 266"/>
-            </g>
-            <g class="fanout__dst">
-              <rect x="212" y="16" width="144" height="36" rx="8"/><text x="284" y="39" text-anchor="middle">cache invalidation</text>
-              <rect x="212" y="74" width="144" height="36" rx="8"/><text x="284" y="97" text-anchor="middle">search re-index</text>
-              <rect x="212" y="132" width="144" height="36" rx="8"/><text x="284" y="155" text-anchor="middle">audit trail</text>
-              <rect x="212" y="190" width="144" height="36" rx="8"/><text x="284" y="213" text-anchor="middle">experiment analytics</text>
-              <rect x="212" y="248" width="144" height="36" rx="8"/><text x="284" y="271" text-anchor="middle">auto-tagging</text>
-            </g>
-          </svg>
-          <figcaption class="mono muted">one event · five consumers</figcaption>
-        </figure>
-      </article>
-
-      <article class="project reveal">
-        <div class="project__text">
-          <p class="mono muted">02 / Multi-tenant SaaS</p>
-          <h3>Coaching Center Fee Manager</h3>
-          <p>
-            Fee tracking and due reminders for small coaching centers in Bangladesh: students, fee plans,
-            monthly dues, payments and an unpaid list, as a mobile-first Angular app on a .NET API.
-            Each design choice is written down with its alternatives and trade-offs.
-          </p>
-          <p>
-            Multi-tenant on a shared PostgreSQL database. Cookie auth is hardened with atomic lockout counting,
-            per-IP rate limiting and security stamps that end every session on reset. Payments are immutable,
-            and reminders only go out after a person reviews who will get one.
-          </p>
-          <p class="chips"><span>.NET 10</span><span>Angular</span><span>PostgreSQL</span><span>EF Core</span><span>Docker</span><span>GitHub Actions</span></p>
-          <a class="link" href="https://github.com/anik-ewu/tuition-management-sass" target="_blank" rel="noopener">View on GitHub ↗</a>
-        </div>
-        <figure class="dues" aria-label="Monthly dues illustration">
-          <div class="dues__head">
-            <span class="mono muted">October</span>
-            <span class="mono muted">collected / expected</span>
+      <!-- Program.cs -->
+      <section class="pane" id="pane-program" data-name="Program.cs" hidden>
+        <div class="home">
+          <canvas class="field" id="field" aria-hidden="true"></canvas>
+          <div class="home__inner">
+            <p class="code"><span class="c">// Program.cs — hello, world. Welcome to my portfolio.</span></p>
+            <p class="code"><span class="k">var</span> me = <span class="t">Engineer</span>.<span class="f">CreateBuilder</span>(args);</p>
+            <h1 class="hello">
+              <span class="hello__line"><span>Sabbir</span></span>
+              <span class="hello__line"><span class="hello__ac">Hasan</span></span>
+            </h1>
+            <ul class="pills">
+              <li>Backend Engineer</li>
+              <li>.NET · Azure</li>
+              <li>Competitive Programmer</li>
+              <li class="pill--ac">@ SELISE</li>
+            </ul>
+            <p class="typing mono"><span class="c">// currently </span><span id="typed"></span><span class="caret"></span></p>
+            <p class="lede">
+              I build and run enterprise <b>.NET</b> services for Swiss insurers — distributed REST APIs,
+              <b>CQRS</b> and <b>event-driven</b> architecture on <b>Azure</b>, with production on-call ownership.
+              Off the clock I solve algorithm problems against a contest clock.
+            </p>
+            <div class="cta">
+              <button class="btn btn--ac" data-open="projects"><i class="ic ic-dir"></i>Projects</button>
+              <button class="btn" data-open="about"><i class="ic ic-md"></i>About.md</button>
+              <button class="btn" data-open="contact"><i class="ic ic-http"></i>Contact.http</button>
+            </div>
+            <dl class="stats">
+              <div><dt>5+</dt><dd>years</dd></div>
+              <div><dt>2000+</dt><dd>problems solved</dd></div>
+              <div><dt>3×</dt><dd>ICPC regionals</dd></div>
+              <div><dt>150+</dt><dd>classes taught</dd></div>
+            </dl>
+            <ul class="links">
+              <li><a href="https://github.com/anik-ewu" target="_blank" rel="noopener">GitHub</a></li>
+              <li><a href="https://www.linkedin.com/in/sabbir-hasan-anik-2433a614b/" target="_blank" rel="noopener">LinkedIn</a></li>
+              <li><a href="https://codeforces.com/profile/sabbir-hasan-anik" target="_blank" rel="noopener">Codeforces</a></li>
+              <li><a href="mailto:sabbirhasananik@gmail.com">Email</a></li>
+              <li><button data-open="resume">Résumé</button></li>
+            </ul>
           </div>
-          <p class="dues__sum"><b>৳ 84,500</b> <span class="muted">/ ৳ 1,12,000</span></p>
-          <div class="dues__bar"><b style="--p:75%"></b></div>
-          <ul class="dues__list">
-            <li><span>Class 8 · Batch A</span><span class="tag tag--ok mono">paid</span></li>
-            <li><span>Class 9 · Batch B</span><span class="tag mono">3 due</span></li>
-            <li><span>SSC Physics</span><span class="tag mono">5 due</span></li>
-          </ul>
-          <span class="dues__btn mono">Review 8 reminders →</span>
-          <figcaption class="mono muted">a person presses send, never a cron job</figcaption>
-        </figure>
-      </article>
-
-      <article class="project reveal">
-        <div class="project__text">
-          <p class="mono muted">03 / Feature flags</p>
-          <h3>FlagMaster</h3>
-          <p>
-            A multi-tenant feature-flag platform with percentage rollouts and targeting rules.
-            The evaluation API is Redis-cached and built on Clean Architecture and CQRS.
-          </p>
-          <p class="chips"><span>.NET 8</span><span>Angular</span><span>PostgreSQL</span><span>Redis</span></p>
-          <a class="link" href="https://github.com/anik-ewu/feature-flag" target="_blank" rel="noopener">View on GitHub ↗</a>
         </div>
-        <figure class="flags" aria-label="Feature flag rollout illustration">
-          <div class="flag"><span class="mono">new-checkout</span><label class="switch"><input type="checkbox" checked><i></i></label><div class="bar"><b style="--p:25%"></b></div><span class="mono muted">25%</span></div>
-          <div class="flag"><span class="mono">dark-mode</span><label class="switch"><input type="checkbox" checked><i></i></label><div class="bar"><b style="--p:100%"></b></div><span class="mono muted">100%</span></div>
-          <div class="flag"><span class="mono">ai-tagging</span><label class="switch"><input type="checkbox"><i></i></label><div class="bar"><b style="--p:0%"></b></div><span class="mono muted">0%</span></div>
-          <figcaption class="mono muted">tenant: acme · rule: country = CH</figcaption>
-        </figure>
-      </article>
+      </section>
 
-      <div class="more">
-        <a class="card reveal" href="https://github.com/anik-ewu/devforabuck" target="_blank" rel="noopener">
-          <p class="mono muted">04 / Booking platform</p>
-          <h4>Dev for a Buck <span class="arrow">↗</span></h4>
-          <p>Book CV reviews and career consultations. Users book and manage slots; admins approve and schedule. Microsoft Entra External ID with Google and Microsoft SSO over OAuth 2.0 PKCE.</p>
-          <p class="chips"><span>.NET 8</span><span>CQRS</span><span>Angular 17</span><span>Cosmos DB</span><span>Entra ID</span></p>
-        </a>
-        <a class="card reveal" href="https://anik-ewu.github.io/dhaka-digital-diagonistic-center/" target="_blank" rel="noopener">
-          <p class="mono muted">05 / Client website · live</p>
-          <h4>Dhaka Digital Diagnostic Center <span class="arrow">↗</span></h4>
-          <p>Website for a diagnostic center in Faridpur with a Bangla ⇄ English switch, a doctor directory filtered by specialty, and services with fees. All content lives in one data file the staff can edit.</p>
-          <p class="chips"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Bangla / English</span><span>GitHub Pages</span></p>
-        </a>
-      </div>
-    </section>
+      <!-- About.md -->
+      <section class="pane doc" id="pane-about" data-name="About.md" hidden>
+        <h2 class="md-h1"><span class="hash">#</span> About</h2>
+        <p class="scrub" id="scrub">I like problems with a clear verdict. At work that means services that stay up, designs that survive review and deploys that are boring. Off the clock it means a contest clock running down and one more test case to pass.</p>
 
-    <!-- CONTESTS -->
-    <section id="contests" class="section wrap">
-      <header class="section__head reveal"><span class="letter">D</span><h2>Contest log</h2></header>
-      <div class="contest">
-        <ol class="log reveal">
-          <li><span class="mono">2018–20</span><p>ACM ICPC Dhaka Regional — three appearances</p></li>
-          <li><span class="mono">2020</span><p>Top 19 / 150 teams, National Collegiate Programming Contest</p></li>
-          <li><span class="mono">2019</span><p>1st place, Intra University Telco Code War</p></li>
-          <li><span class="mono">2019</span><p>Top 5 / 50 teams, UITS Inter-University</p></li>
-          <li><span class="mono">2023</span><p>Official tester, Codeforces Round 886</p></li>
-          <li><span class="mono">2022–23</span><p>Organized EWU intra-university programming contests</p></li>
-        </ol>
-        <p class="contest__note reveal">
-          2000+ problems across Codeforces, UVa and other judges, 15+ inter-university contests,
-          and 150+ volunteer classes taught to the next batch.
-          <a class="link" href="https://codeforces.com/profile/sabbir-hasan-anik" target="_blank" rel="noopener">Codeforces profile ↗</a>
+        <h3 class="md-h2"><span class="hash">##</span> What I do</h3>
+        <p>
+          I'm a backend-focused engineer with 5+ years at <b>SELISE Digital Platforms</b> in Dhaka. I'm a core engineer on
+          <b>EcoHub</b>, an insurance platform used by top Swiss insurers. I design the backend services and lead the Angular client that uses them.
         </p>
-      </div>
+        <ul class="md-list">
+          <li>Distributed services in <b>C# / .NET</b> with CQRS, event-driven architecture and Domain-Driven Design</li>
+          <li>Design docs first: I validate the approach with UI/UX and the client before writing code</li>
+          <li>Production ownership: on-call for Swiss deployments, with Application Insights and Seq</li>
+          <li>Team: mentoring juniors, code review, and sprint releases on Azure DevOps</li>
+        </ul>
 
-      <div class="gallery" id="gallery">
-        <figure class="g g--wide reveal"><img src="assets/img/team-stairs.jpg" alt="Contest teams gathered on red stairs" loading="lazy"><figcaption>Teammates &amp; friends</figcaption></figure>
-        <figure class="g reveal"><img src="assets/img/sub-2019.jpg" alt="Team at the Brain Craft – SUB Inter University Programming Contest 2019" loading="lazy"><figcaption>SUB Inter-University, 2019</figcaption></figure>
-        <figure class="g reveal"><img src="assets/img/award.jpg" alt="Receiving an award on stage" loading="lazy"><figcaption>On stage</figcaption></figure>
-        <figure class="g reveal"><img src="assets/img/icpc-hall.jpg" alt="Hundreds of contestants on a programming contest floor" loading="lazy"><figcaption>Contest floor</figcaption></figure>
-        <figure class="g reveal"><img src="assets/img/team-campus.jpg" alt="Three teammates on a tree-lined campus road" loading="lazy"><figcaption>Team on campus, 2019</figcaption></figure>
-        <figure class="g g--wide reveal"><img src="assets/img/ewu-contest.jpg" alt="Participants and organizers of an EWU intra-university programming contest" loading="lazy"><figcaption>EWU intra-university contest</figcaption></figure>
-        <figure class="g reveal"><img src="assets/img/iupc-2018.jpg" alt="Rows of contestants at IUPC 2018" loading="lazy"><figcaption>IUPC, 2018</figcaption></figure>
-        <figure class="g reveal"><img src="assets/img/nsu-2019.jpg" alt="Team in red contest shirts at North South University" loading="lazy"><figcaption>NSU, 2019</figcaption></figure>
-      </div>
-    </section>
+        <h3 class="md-h2"><span class="hash">##</span> Education</h3>
+        <p><b>B.Sc. in Computer Science &amp; Engineering</b>, East West University, 2016 – 2021.<br>
+          <b>Microsoft Certified: Azure Fundamentals (AZ-900)</b>, July 2025.</p>
 
-    <!-- SKILLS -->
-    <section class="section wrap">
-      <header class="section__head reveal"><span class="letter">·</span><h2>Toolbox</h2></header>
-      <dl class="skills reveal">
-        <div><dt>Languages</dt><dd>C# · TypeScript · C++ · JavaScript · SQL</dd></div>
-        <div><dt>Backend</dt><dd>ASP.NET Core · MediatR (CQRS) · REST · Kafka · Clean Architecture · DDD</dd></div>
-        <div><dt>Frontend</dt><dd>Angular · HTML · CSS</dd></div>
-        <div><dt>Data</dt><dd>PostgreSQL · EF Core · Redis · Cosmos DB · MongoDB · MySQL</dd></div>
-        <div><dt>Platform</dt><dd>Azure (Functions, DevOps, Blob) · Docker · Kubernetes · GitHub Actions</dd></div>
-        <div><dt>Quality &amp; Ops</dt><dd>Unit testing · Application Insights · Seq · Agile / Scrum</dd></div>
-      </dl>
-    </section>
+        <h3 class="md-h2"><span class="hash">##</span> Giving back</h3>
+        <p>I've taught 150+ volunteer programming classes and organized the EWU intra-university programming contests in 2022 and 2023.</p>
 
-    <!-- CONTACT -->
-    <section id="contact" class="section wrap contact">
-      <header class="section__head reveal"><span class="letter">E</span><h2>Contact</h2></header>
-      <p class="contact__big reveal">Have a hard problem?<br><em>Let's submit a solution.</em></p>
-      <a class="contact__mail reveal" href="mailto:sabbirhasananik@gmail.com">sabbirhasananik@gmail.com</a>
-      <ul class="socials reveal">
-        <li><a href="https://github.com/anik-ewu" target="_blank" rel="noopener">GitHub ↗</a></li>
-        <li><a href="https://www.linkedin.com/in/sabbir-hasan-anik-2433a614b/" target="_blank" rel="noopener">LinkedIn ↗</a></li>
-        <li><a href="https://codeforces.com/profile/sabbir-hasan-anik" target="_blank" rel="noopener">Codeforces ↗</a></li>
-        <li><a href="assets/sabbir_hasan_resume.pdf" target="_blank" rel="noopener">Résumé ↗</a></li>
-      </ul>
-    </section>
+        <blockquote class="md-quote">Based in Dhaka, Bangladesh. Open to backend and platform engineering roles. <button class="inline-link" data-open="contact">Contact.http →</button></blockquote>
+      </section>
+
+      <!-- Experience.cs -->
+      <section class="pane doc" id="pane-experience" data-name="Experience.cs" hidden>
+        <p class="code"><span class="k">namespace</span> <span class="t">SabbirHasan</span>.<span class="t">Career</span>;</p>
+        <p class="code"><span class="c">/// &lt;summary&gt;Where I've worked and what I shipped.&lt;/summary&gt;</span></p>
+
+        <article class="xp">
+          <p class="code xp__sig"><span class="k">public sealed class</span> <span class="t">SeliseDigitalPlatforms</span> : <span class="t">Employer</span></p>
+          <div class="xp__card">
+            <header class="xp__head">
+              <div>
+                <h2>Software Engineer</h2>
+                <p class="muted">SELISE Digital Platforms · Dhaka</p>
+              </div>
+              <span class="badge mono">May 2021 → Present</span>
+            </header>
+            <p>Core engineer on <b>EcoHub</b>, an insurance platform used by top Swiss insurers. I own backend service design and lead the Angular client that uses it.</p>
+            <ul class="checks">
+              <li>Built scalable backend services and REST APIs in C#/.NET, applying <b>CQRS</b>, <b>event-driven architecture</b> and <b>DDD</b> across distributed services.</li>
+              <li>Cut build and deploy time by <mark>50%</mark> by moving translation delivery into its own pipeline (ngx-translate, POEditor).</li>
+              <li>On-call for Swiss client deployments, diagnosing production incidents with Application Insights and Seq structured logs.</li>
+              <li>Automated cross-system data sync with <b>Azure Functions</b> and a HubSpot CRM integration.</li>
+              <li>Wrote technical design documents and checked them with UI/UX and the client before implementation.</li>
+              <li>Covered features with unit tests and an in-house automated suite, pairing with QA on high-risk flows before release.</li>
+              <li>Mentored 3 junior engineers, owned code review and merge quality, and ran sprint releases on Azure DevOps.</li>
+            </ul>
+            <p class="chips"><span>C#</span><span>.NET</span><span>CQRS</span><span>DDD</span><span>Azure Functions</span><span>Azure DevOps</span><span>Angular</span><span>Cosmos DB</span></p>
+          </div>
+        </article>
+
+        <article class="xp">
+          <p class="code xp__sig"><span class="k">public sealed class</span> <span class="t">EastWestUniversity</span> : <span class="t">School</span></p>
+          <div class="xp__card">
+            <header class="xp__head">
+              <div>
+                <h2>B.Sc. in Computer Science &amp; Engineering</h2>
+                <p class="muted">East West University · Dhaka</p>
+              </div>
+              <span class="badge mono">2016 → 2021</span>
+            </header>
+            <p>Competed in ACM ICPC Dhaka Regional three times, and later came back to organize the university's programming contests.</p>
+          </div>
+        </article>
+      </section>
+
+      <!-- Projects/README.md -->
+      <section class="pane doc" id="pane-projects" data-name="README.md" data-path="Projects" hidden>
+        <h2 class="md-h1"><span class="hash">#</span> Projects</h2>
+        <p class="muted">Side projects where I try out architecture I want to understand properly. Open any <code>.csproj</code> for details.</p>
+        <div class="grid">
+          <button class="proj" data-open="opendxp">
+            <span class="proj__top"><i class="ic ic-proj"></i><span class="mono muted">headless cms · dxp</span></span>
+            <span class="proj__name">OpenDXP</span>
+            <span class="proj__desc">Headless CMS with CQRS, a Kafka transactional outbox fanning one event out to five consumers, OIDC auth, A/B bucketing and Helm on Kubernetes.</span>
+            <span class="chips"><span>.NET 8</span><span>Kafka</span><span>PostgreSQL</span><span>K8s</span></span>
+          </button>
+          <button class="proj" data-open="feemanager">
+            <span class="proj__top"><i class="ic ic-proj"></i><span class="mono muted">multi-tenant saas</span></span>
+            <span class="proj__name">Coaching Center Fee Manager</span>
+            <span class="proj__desc">Fee tracking and due reminders for coaching centers in Bangladesh. Hardened cookie auth, immutable payments, one-server deploy.</span>
+            <span class="chips"><span>.NET 10</span><span>Angular</span><span>PostgreSQL</span><span>Docker</span></span>
+          </button>
+          <button class="proj" data-open="flagmaster">
+            <span class="proj__top"><i class="ic ic-proj"></i><span class="mono muted">feature flags</span></span>
+            <span class="proj__name">FlagMaster</span>
+            <span class="proj__desc">Multi-tenant feature-flag platform with percentage rollouts, targeting rules and a Redis-cached evaluation API.</span>
+            <span class="chips"><span>.NET 8</span><span>Redis</span><span>PostgreSQL</span></span>
+          </button>
+          <button class="proj" data-open="devforabuck">
+            <span class="proj__top"><i class="ic ic-proj"></i><span class="mono muted">booking platform</span></span>
+            <span class="proj__name">Dev for a Buck</span>
+            <span class="proj__desc">Book CV reviews and career consultations. Entra External ID with Google and Microsoft SSO over OAuth 2.0 PKCE.</span>
+            <span class="chips"><span>.NET 8</span><span>Cosmos DB</span><span>Entra ID</span></span>
+          </button>
+          <button class="proj" data-open="diagnostic">
+            <span class="proj__top"><i class="ic ic-html"></i><span class="mono muted">client website · live</span></span>
+            <span class="proj__name">Dhaka Digital Diagnostic Center</span>
+            <span class="proj__desc">Bangla ⇄ English site for a diagnostic center in Faridpur, with a doctor directory and services. Staff edit one data file.</span>
+            <span class="chips"><span>HTML</span><span>CSS</span><span>JS</span></span>
+          </button>
+        </div>
+      </section>
+
+      <!-- OpenDXP.csproj -->
+      <section class="pane doc" id="pane-opendxp" data-name="OpenDXP.csproj" data-path="Projects" hidden>
+        <p class="code"><span class="c">&lt;!-- github.com/anik-ewu/open-dxp-project --&gt;</span></p>
+        <p class="code">&lt;<span class="t">Project</span> <span class="f">Sdk</span>=<span class="s">"Microsoft.NET.Sdk.Web"</span>&gt;</p>
+        <div class="detail">
+          <div>
+            <h2 class="detail__name">OpenDXP</h2>
+            <p class="detail__tag">Headless CMS and digital experience platform</p>
+            <p>Clean Architecture with CQRS (MediatR): draft → publish versioning, a REST delivery API, and OpenIddict OIDC auth with PKCE, refresh-token rotation, RBAC and resource-based policies.</p>
+            <p>A Kafka transactional outbox fans one <code>PagePublished</code> event out to five independent consumers. Audience targeting uses SHA-256 visitor bucketing for A/B splits, pgvector powers related-page search, and a Helm chart was verified end to end on a live cluster.</p>
+            <p class="chips"><span>.NET 8</span><span>Angular 20</span><span>PostgreSQL</span><span>Redis</span><span>Kafka</span><span>pgvector</span><span>Docker</span><span>Kubernetes</span><span>Azure</span></p>
+            <a class="btn btn--ac" href="https://github.com/anik-ewu/open-dxp-project" target="_blank" rel="noopener">View on GitHub ↗</a>
+          </div>
+          <figure class="viz" aria-label="One PagePublished event fans out to five consumers">
+            <svg viewBox="0 0 360 300" role="img" class="fanout">
+              <defs><marker id="arr" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 8 4 0 8z" fill="currentColor"/></marker></defs>
+              <g class="fanout__src"><rect x="6" y="126" width="122" height="48" rx="10"/><text x="67" y="148" text-anchor="middle" class="t1">PagePublished</text><text x="67" y="164" text-anchor="middle" class="t2">outbox → kafka</text></g>
+              <g class="fanout__lines" marker-end="url(#arr)">
+                <path d="M128 150 C 175 150, 175 34, 208 34"/><path d="M128 150 C 175 150, 175 92, 208 92"/><path d="M128 150 L 208 150"/><path d="M128 150 C 175 150, 175 208, 208 208"/><path d="M128 150 C 175 150, 175 266, 208 266"/>
+              </g>
+              <g class="fanout__dst">
+                <rect x="210" y="16" width="146" height="36" rx="8"/><text x="283" y="39" text-anchor="middle">cache invalidation</text>
+                <rect x="210" y="74" width="146" height="36" rx="8"/><text x="283" y="97" text-anchor="middle">search re-index</text>
+                <rect x="210" y="132" width="146" height="36" rx="8"/><text x="283" y="155" text-anchor="middle">audit trail</text>
+                <rect x="210" y="190" width="146" height="36" rx="8"/><text x="283" y="213" text-anchor="middle">experiment analytics</text>
+                <rect x="210" y="248" width="146" height="36" rx="8"/><text x="283" y="271" text-anchor="middle">auto-tagging</text>
+              </g>
+            </svg>
+            <figcaption class="mono muted">one event · five consumers</figcaption>
+          </figure>
+        </div>
+        <p class="code">&lt;/<span class="t">Project</span>&gt;</p>
+      </section>
+
+      <!-- FeeManager.csproj -->
+      <section class="pane doc" id="pane-feemanager" data-name="FeeManager.csproj" data-path="Projects" hidden>
+        <p class="code"><span class="c">&lt;!-- github.com/anik-ewu/tuition-management-sass --&gt;</span></p>
+        <p class="code">&lt;<span class="t">Project</span> <span class="f">Sdk</span>=<span class="s">"Microsoft.NET.Sdk.Web"</span>&gt;</p>
+        <div class="detail">
+          <div>
+            <h2 class="detail__name">Coaching Center Fee Manager</h2>
+            <p class="detail__tag">Multi-tenant SaaS for small coaching centers in Bangladesh</p>
+            <p>Students, fee plans, monthly dues, payments and an unpaid list, as a mobile-first Angular app on a .NET API. Every architecture decision is written down with its alternatives and trade-offs.</p>
+            <p>Multi-tenant on a shared PostgreSQL database. Cookie auth is hardened with atomic lockout counting, per-IP rate limiting and security stamps that end every session on reset. Payments are immutable, and reminders only go out after a person reviews who will get one. CI builds and tests both the API and the web app.</p>
+            <p class="chips"><span>.NET 10</span><span>Angular</span><span>PostgreSQL</span><span>EF Core</span><span>Docker</span><span>Caddy</span><span>GitHub Actions</span></p>
+            <a class="btn btn--ac" href="https://github.com/anik-ewu/tuition-management-sass" target="_blank" rel="noopener">View on GitHub ↗</a>
+          </div>
+          <figure class="viz dues" aria-label="Monthly dues illustration">
+            <div class="dues__head"><span class="mono muted">October</span><span class="mono muted">collected / expected</span></div>
+            <p class="dues__sum"><b>৳ 84,500</b> <span class="muted">/ ৳ 1,12,000</span></p>
+            <div class="dues__bar"><b></b></div>
+            <ul class="dues__list">
+              <li><span>Class 8 · Batch A</span><span class="tag tag--ok mono">paid</span></li>
+              <li><span>Class 9 · Batch B</span><span class="tag mono">3 due</span></li>
+              <li><span>SSC Physics</span><span class="tag mono">5 due</span></li>
+            </ul>
+            <span class="dues__btn mono">Review 8 reminders →</span>
+            <figcaption class="mono muted">a person presses send, never a cron job</figcaption>
+          </figure>
+        </div>
+        <p class="code">&lt;/<span class="t">Project</span>&gt;</p>
+      </section>
+
+      <!-- FlagMaster.csproj -->
+      <section class="pane doc" id="pane-flagmaster" data-name="FlagMaster.csproj" data-path="Projects" hidden>
+        <p class="code"><span class="c">&lt;!-- github.com/anik-ewu/feature-flag --&gt;</span></p>
+        <p class="code">&lt;<span class="t">Project</span> <span class="f">Sdk</span>=<span class="s">"Microsoft.NET.Sdk.Web"</span>&gt;</p>
+        <div class="detail">
+          <div>
+            <h2 class="detail__name">FlagMaster</h2>
+            <p class="detail__tag">Multi-tenant feature-flag platform</p>
+            <p>Percentage rollouts and targeting rules per tenant. The evaluation API is Redis-cached and built on Clean Architecture and CQRS, so flag checks stay fast on the hot path.</p>
+            <p class="muted">Try the switches →</p>
+            <p class="chips"><span>.NET 8</span><span>Angular</span><span>PostgreSQL</span><span>Redis</span></p>
+            <a class="btn btn--ac" href="https://github.com/anik-ewu/feature-flag" target="_blank" rel="noopener">View on GitHub ↗</a>
+          </div>
+          <figure class="viz flags" aria-label="Feature flag rollout illustration">
+            <div class="flag" data-p="25"><span class="mono">new-checkout</span><label class="switch"><input type="checkbox" checked aria-label="new-checkout"><i></i></label><div class="bar"><b></b></div><span class="mono muted pct">25%</span></div>
+            <div class="flag" data-p="100"><span class="mono">dark-mode</span><label class="switch"><input type="checkbox" checked aria-label="dark-mode"><i></i></label><div class="bar"><b></b></div><span class="mono muted pct">100%</span></div>
+            <div class="flag" data-p="10"><span class="mono">ai-tagging</span><label class="switch"><input type="checkbox" aria-label="ai-tagging"><i></i></label><div class="bar"><b></b></div><span class="mono muted pct">0%</span></div>
+            <figcaption class="mono muted">tenant: acme · rule: country = CH</figcaption>
+          </figure>
+        </div>
+        <p class="code">&lt;/<span class="t">Project</span>&gt;</p>
+      </section>
+
+      <!-- DevForABuck.csproj -->
+      <section class="pane doc" id="pane-devforabuck" data-name="DevForABuck.csproj" data-path="Projects" hidden>
+        <p class="code"><span class="c">&lt;!-- github.com/anik-ewu/devforabuck --&gt;</span></p>
+        <p class="code">&lt;<span class="t">Project</span> <span class="f">Sdk</span>=<span class="s">"Microsoft.NET.Sdk.Web"</span>&gt;</p>
+        <div class="detail">
+          <div>
+            <h2 class="detail__name">Dev for a Buck</h2>
+            <p class="detail__tag">Booking and consultation platform</p>
+            <p>Users browse and book consultation slots such as CV reviews and career guidance, and manage their own bookings. Admins create slots and approve, reject or cancel bookings.</p>
+            <p>An ASP.NET Core API with CQRS and MediatR over Cosmos DB and Blob Storage. Sign-in uses Microsoft Entra External ID with Google and Microsoft SSO through the OAuth 2.0 PKCE flow.</p>
+            <p class="chips"><span>.NET 8</span><span>CQRS</span><span>MediatR</span><span>Angular 17</span><span>Cosmos DB</span><span>Blob Storage</span><span>Entra ID</span></p>
+            <a class="btn btn--ac" href="https://github.com/anik-ewu/devforabuck" target="_blank" rel="noopener">View on GitHub ↗</a>
+          </div>
+          <figure class="viz seq" aria-label="PKCE sign-in flow">
+            <ol>
+              <li><span class="mono">SPA</span><span>creates PKCE verifier + challenge</span></li>
+              <li><span class="mono">Entra ID</span><span>user signs in with Google / Microsoft</span></li>
+              <li><span class="mono">SPA</span><span>receives auth code</span></li>
+              <li><span class="mono">API</span><span>code + verifier → tokens</span></li>
+              <li><span class="mono">SPA</span><span>calls API with access token</span></li>
+            </ol>
+            <figcaption class="mono muted">oauth 2.0 · authorization code + pkce</figcaption>
+          </figure>
+        </div>
+        <p class="code">&lt;/<span class="t">Project</span>&gt;</p>
+      </section>
+
+      <!-- DiagnosticCenter.html -->
+      <section class="pane doc" id="pane-diagnostic" data-name="DiagnosticCenter.html" data-path="Projects" hidden>
+        <p class="code">&lt;<span class="t">a</span> <span class="f">href</span>=<span class="s">"anik-ewu.github.io/dhaka-digital-diagonistic-center"</span>&gt;</p>
+        <div class="detail">
+          <div>
+            <h2 class="detail__name">Dhaka Digital Diagnostic Center</h2>
+            <p class="detail__tag">Client website · live</p>
+            <p>A website for a diagnostic center in Faridpur with a Bangla ⇄ English switch, a doctor directory filtered by specialty, and services with fees.</p>
+            <p>No backend and no build step. All content lives in one data file, so staff can add a doctor or change a fee without touching the code. Hosted on GitHub Pages.</p>
+            <p class="chips"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Bangla / English</span><span>GitHub Pages</span></p>
+            <div class="cta">
+              <a class="btn btn--ac" href="https://anik-ewu.github.io/dhaka-digital-diagonistic-center/" target="_blank" rel="noopener">Visit the site ↗</a>
+              <a class="btn" href="https://github.com/anik-ewu/dhaka-digital-diagonistic-center" target="_blank" rel="noopener">Source ↗</a>
+            </div>
+          </div>
+          <figure class="viz lang" aria-label="Language switch demo">
+            <div class="lang__switch" role="group" aria-label="Language">
+              <button class="is-on" data-lang="bn">বাংলা</button><button data-lang="en">English</button>
+            </div>
+            <p class="lang__title" data-bn="ঢাকা ডিজিটাল ডায়াগনস্টিক সেন্টার" data-en="Dhaka Digital Diagnostic Center">ঢাকা ডিজিটাল ডায়াগনস্টিক সেন্টার</p>
+            <p class="lang__sub muted" data-bn="ফরিদপুর · পরীক্ষা ও বিশেষজ্ঞ ডাক্তার" data-en="Faridpur · Tests and specialist doctors">ফরিদপুর · পরীক্ষা ও বিশেষজ্ঞ ডাক্তার</p>
+            <figcaption class="mono muted">{ bn: "…", en: "…" } for every string</figcaption>
+          </figure>
+        </div>
+        <p class="code">&lt;/<span class="t">a</span>&gt;</p>
+      </section>
+
+      <!-- appsettings.json -->
+      <section class="pane doc" id="pane-skills" data-name="appsettings.json" hidden>
+<pre class="json"><code>{
+  <span class="p">"Engineer"</span>: {
+    <span class="p">"Languages"</span>:    [<span class="s">"C#"</span>, <span class="s">"TypeScript"</span>, <span class="s">"C++"</span>, <span class="s">"JavaScript"</span>, <span class="s">"SQL"</span>],
+    <span class="p">"Backend"</span>:      [<span class="s">"ASP.NET Core"</span>, <span class="s">"MediatR (CQRS)"</span>, <span class="s">"REST"</span>, <span class="s">"Kafka"</span>,
+                     <span class="s">"Clean Architecture"</span>, <span class="s">"Domain-Driven Design"</span>],
+    <span class="p">"Frontend"</span>:     [<span class="s">"Angular"</span>, <span class="s">"HTML"</span>, <span class="s">"CSS"</span>],
+    <span class="p">"Data"</span>:         [<span class="s">"PostgreSQL"</span>, <span class="s">"EF Core"</span>, <span class="s">"Redis"</span>, <span class="s">"Cosmos DB"</span>, <span class="s">"MongoDB"</span>, <span class="s">"MySQL"</span>],
+    <span class="p">"Platform"</span>:     [<span class="s">"Azure Functions"</span>, <span class="s">"Azure DevOps"</span>, <span class="s">"Blob Storage"</span>, <span class="s">"Docker"</span>,
+                     <span class="s">"Kubernetes"</span>, <span class="s">"GitHub Actions"</span>, <span class="s">"Git"</span>],
+    <span class="p">"QualityAndOps"</span>: [<span class="s">"Unit testing"</span>, <span class="s">"Application Insights"</span>, <span class="s">"Seq"</span>, <span class="s">"Agile / Scrum"</span>],
+    <span class="p">"Certifications"</span>: [<span class="s">"Microsoft Certified: Azure Fundamentals (AZ-900)"</span>],
+    <span class="p">"YearsOfExperience"</span>: <span class="n">5</span>,
+    <span class="p">"OnCall"</span>: <span class="k">true</span>
+  }
+}</code></pre>
+      </section>
+
+      <!-- Contests.log -->
+      <section class="pane doc" id="pane-contests" data-name="Contests.log" hidden>
+        <div class="log mono">
+          <p><span class="ts">2018</span><span class="lv lv-info">INFO</span>ACM ICPC Dhaka Regional — competed</p>
+          <p><span class="ts">2018</span><span class="lv lv-info">INFO</span>National Collegiate Programming Contest (NCPC)</p>
+          <p><span class="ts">2019</span><span class="lv lv-ac">ACCEPTED</span>1st place — Intra University Telco Code War</p>
+          <p><span class="ts">2019</span><span class="lv lv-ac">ACCEPTED</span>Top 5 / 50 teams — UITS Inter-University</p>
+          <p><span class="ts">2019</span><span class="lv lv-info">INFO</span>ACM ICPC Dhaka Regional — competed</p>
+          <p><span class="ts">2020</span><span class="lv lv-ac">ACCEPTED</span>Top 19 / 150 teams — National Collegiate Programming Contest</p>
+          <p><span class="ts">2020</span><span class="lv lv-info">INFO</span>ACM ICPC Dhaka Regional — competed</p>
+          <p><span class="ts">2022</span><span class="lv lv-warn">ORGANIZE</span>EWU intra-university programming contest</p>
+          <p><span class="ts">2023</span><span class="lv lv-warn">ORGANIZE</span>EWU intra-university programming contest</p>
+          <p><span class="ts">2023</span><span class="lv lv-info">INFO</span>Official tester — Codeforces Round 886</p>
+          <p><span class="ts">total</span><span class="lv lv-ac">SUMMARY</span>2000+ problems · 15+ inter-university contests · 150+ classes taught</p>
+        </div>
+        <p class="muted log__link"><a href="https://codeforces.com/profile/sabbir-hasan-anik" target="_blank" rel="noopener">Codeforces profile ↗</a></p>
+
+        <div class="gallery" id="gallery">
+          <figure class="g g--wide"><img src="assets/img/team-stairs.jpg" alt="Contest teams gathered on red stairs" loading="lazy"><figcaption>Teammates &amp; friends</figcaption></figure>
+          <figure class="g"><img src="assets/img/sub-2019.jpg" alt="Team at the Brain Craft – SUB Inter University Programming Contest 2019" loading="lazy"><figcaption>SUB Inter-University, 2019</figcaption></figure>
+          <figure class="g"><img src="assets/img/award.jpg" alt="Receiving an award on stage" loading="lazy"><figcaption>On stage</figcaption></figure>
+          <figure class="g"><img src="assets/img/icpc-hall.jpg" alt="Hundreds of contestants on a programming contest floor" loading="lazy"><figcaption>Contest floor</figcaption></figure>
+          <figure class="g"><img src="assets/img/team-campus.jpg" alt="Three teammates on a tree-lined campus road" loading="lazy"><figcaption>Team on campus, 2019</figcaption></figure>
+          <figure class="g g--wide"><img src="assets/img/ewu-contest.jpg" alt="Participants and organizers of an EWU intra-university programming contest" loading="lazy"><figcaption>EWU intra-university contest</figcaption></figure>
+          <figure class="g"><img src="assets/img/iupc-2018.jpg" alt="Rows of contestants at IUPC 2018" loading="lazy"><figcaption>IUPC, 2018</figcaption></figure>
+          <figure class="g"><img src="assets/img/nsu-2019.jpg" alt="Team in red contest shirts at North South University" loading="lazy"><figcaption>NSU, 2019</figcaption></figure>
+        </div>
+      </section>
+
+      <!-- Contact.http -->
+      <section class="pane doc" id="pane-contact" data-name="Contact.http" hidden>
+        <p class="code"><span class="c">### Say hello — hit "Send Request"</span></p>
+        <div class="req">
+          <a class="req__send mono" href="mailto:sabbirhasananik@gmail.com?subject=Hello%20Sabbir">▶ Send Request</a>
+          <p class="code"><span class="k">POST</span> <span class="s">mailto:sabbirhasananik@gmail.com</span></p>
+          <p class="code"><span class="p">Content-Type</span>: text/plain</p>
+          <p class="code">&nbsp;</p>
+          <p class="code">Hi Sabbir, I have a hard problem…</p>
+        </div>
+        <h2 class="contact__big">Have a hard problem?<br><span class="muted">Let's submit a solution.</span></h2>
+        <a class="contact__mail" href="mailto:sabbirhasananik@gmail.com">sabbirhasananik@gmail.com</a>
+
+        <p class="code" style="margin-top:36px"><span class="c">### Elsewhere</span></p>
+        <ul class="gets">
+          <li><a href="https://github.com/anik-ewu" target="_blank" rel="noopener"><span class="k mono">GET</span><span class="mono">github.com/anik-ewu</span><span class="ok mono">200 OK</span></a></li>
+          <li><a href="https://www.linkedin.com/in/sabbir-hasan-anik-2433a614b/" target="_blank" rel="noopener"><span class="k mono">GET</span><span class="mono">linkedin.com/in/sabbir-hasan-anik</span><span class="ok mono">200 OK</span></a></li>
+          <li><a href="https://codeforces.com/profile/sabbir-hasan-anik" target="_blank" rel="noopener"><span class="k mono">GET</span><span class="mono">codeforces.com/profile/sabbir-hasan-anik</span><span class="ok mono">200 OK</span></a></li>
+        </ul>
+      </section>
+
+      <!-- Resume.pdf -->
+      <section class="pane doc" id="pane-resume" data-name="Resume.pdf" hidden>
+        <div class="pdf__bar">
+          <span class="mono muted">sabbir_hasan_resume.pdf</span>
+          <div class="cta">
+            <a class="btn" href="assets/sabbir_hasan_resume.pdf" target="_blank" rel="noopener">Open ↗</a>
+            <a class="btn btn--ac" href="assets/sabbir_hasan_resume.pdf" download>Download</a>
+          </div>
+        </div>
+        <object class="pdf" data="assets/sabbir_hasan_resume.pdf#view=FitH" type="application/pdf" aria-label="Résumé">
+          <p class="muted">Your browser can't show PDFs inline. <a href="assets/sabbir_hasan_resume.pdf">Open the résumé ↗</a></p>
+        </object>
+      </section>
+
+      <!-- Empty state -->
+      <section class="pane empty" id="pane-empty" hidden>
+        <p class="empty__logo mono">&lt;/&gt;</p>
+        <ul class="mono muted">
+          <li>Go to file <kbd>⌘P</kbd></li>
+          <li>Toggle terminal <kbd>Ctrl `</kbd></li>
+          <li><button data-open="program">Open Program.cs</button></li>
+        </ul>
+      </section>
+    </div>
   </main>
 
-  <footer class="foot wrap mono muted">
-    <span>© <span id="year">2026</span> MD Sabbir Hasan</span>
-    <span>Verdict: <b class="ac-text">Accepted</b> · 0 ms</span>
+  <!-- TERMINAL -->
+  <section class="terminal" id="terminal" aria-label="Terminal">
+    <div class="terminal__bar">
+      <span class="is-on">Terminal</span><span>Output</span><span>Problems <b class="mono">0</b></span>
+      <span class="terminal__hint mono">type <code>help</code></span>
+      <button class="iconbtn" id="termClose" aria-label="Toggle terminal">⌄</button>
+    </div>
+    <div class="terminal__body mono" id="termBody">
+      <div id="termOut"></div>
+      <label class="prompt"><span class="prompt__ps"><span class="ok">sabbir</span>@<span class="k">portfolio</span> <span class="muted">~</span> $</span><input id="termIn" autocomplete="off" spellcheck="false" aria-label="Terminal input"></label>
+    </div>
+  </section>
+
+  <!-- STATUS BAR -->
+  <footer class="status mono">
+    <span class="status__item status__branch">⎇ main</span>
+    <span class="status__item hide-sm">✓ 0 errors, 0 warnings</span>
+    <span class="status__spacer"></span>
+    <span class="status__item" id="stLang">C#</span>
+    <span class="status__item hide-sm">UTF-8</span>
+    <span class="status__item hide-sm" id="stClock">Dhaka --:--</span>
+    <span class="status__item status__verdict">Verdict: Accepted</span>
   </footer>
+</div>
 
-  <div class="lightbox" id="lightbox" hidden>
-    <button aria-label="Close">×</button>
-    <img alt="">
-    <p class="mono"></p>
+<!-- COMMAND PALETTE -->
+<div class="palette" id="palette" hidden>
+  <div class="palette__box" role="dialog" aria-label="Go to file">
+    <input id="palIn" placeholder="Search files by name…" autocomplete="off" spellcheck="false">
+    <ul id="palList" role="listbox"></ul>
   </div>
+</div>
 
-  <script src="main.js"></script>
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" hidden>
+  <button aria-label="Close">×</button>
+  <img alt="">
+  <p class="mono"></p>
+</div>
+
+<script src="main.js"></script>
 </body>
 </html>
