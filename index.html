@@ -15,7 +15,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..800&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script>
-    try { const t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+    let t = null; try { t = localStorage.getItem('theme'); } catch (e) {}
+    document.documentElement.dataset.theme = t || (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
   </script>
 </head>
 <body>
@@ -28,7 +29,7 @@
     <nav class="menu" aria-hidden="true"><span>File</span><span>Edit</span><span>View</span><span>Go</span><span>Run</span><span>Terminal</span><span>Help</span></nav>
     <button class="omnibox" id="omnibox" aria-label="Search files">
       <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m16 16 4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-      <span>sabbir-hasan — portfolio</span>
+      <span>Sabbir Hasan — Software Engineer</span>
       <kbd>⌘P</kbd>
     </button>
     <div class="titlebar__right">
@@ -63,6 +64,14 @@
 
   <!-- EXPLORER -->
   <aside class="explorer" id="explorer" aria-label="File explorer">
+    <div class="me">
+      <span class="me__avatar" aria-hidden="true">SH</span>
+      <div>
+        <p class="me__name">Sabbir Hasan</p>
+        <p class="me__role">Software Engineer · SELISE</p>
+        <p class="me__exp">5+ years experience · Dhaka</p>
+      </div>
+    </div>
     <p class="explorer__title">Explorer</p>
     <p class="explorer__root"><span class="chev">▾</span> SABBIR-HASAN</p>
     <ul class="tree" id="tree">
@@ -102,41 +111,34 @@
         <div class="home">
           <canvas class="field" id="field" aria-hidden="true"></canvas>
           <div class="home__inner">
-            <p class="code"><span class="c">// Program.cs — hello, world. Welcome to my portfolio.</span></p>
-            <p class="code"><span class="k">var</span> me = <span class="t">Engineer</span>.<span class="f">CreateBuilder</span>(args);</p>
+            <p class="now"><span class="now__dot"></span>Currently <b>Software Engineer</b> at <b>SELISE Digital Platforms</b></p>
             <h1 class="hello">
               <span class="hello__line"><span>Sabbir</span></span>
               <span class="hello__line"><span class="hello__ac">Hasan</span></span>
             </h1>
-            <ul class="pills">
-              <li>Backend Engineer</li>
-              <li>.NET · Azure</li>
-              <li>Competitive Programmer</li>
-              <li class="pill--ac">@ SELISE</li>
-            </ul>
-            <p class="typing mono"><span class="c">// currently </span><span id="typed"></span><span class="caret"></span></p>
+            <p class="role">Software Engineer with <span class="role__ac">5+ years</span> of experience</p>
             <p class="lede">
-              I build and run enterprise <b>.NET</b> services for Swiss insurers — distributed REST APIs,
+              I build and run enterprise <b>.NET</b> backends for top Swiss insurers: distributed REST APIs,
               <b>CQRS</b> and <b>event-driven</b> architecture on <b>Azure</b>, with production on-call ownership.
-              Off the clock I solve algorithm problems against a contest clock.
             </p>
-            <div class="cta">
-              <button class="btn btn--ac" data-open="projects"><i class="ic ic-dir"></i>Projects</button>
-              <button class="btn" data-open="about"><i class="ic ic-md"></i>About.md</button>
-              <button class="btn" data-open="contact"><i class="ic ic-http"></i>Contact.http</button>
-            </div>
-            <dl class="stats">
-              <div><dt>5+</dt><dd>years</dd></div>
-              <div><dt>2000+</dt><dd>problems solved</dd></div>
-              <div><dt>3×</dt><dd>ICPC regionals</dd></div>
-              <div><dt>150+</dt><dd>classes taught</dd></div>
+            <dl class="facts">
+              <div><dt>Role</dt><dd>Software Engineer</dd></div>
+              <div><dt>Experience</dt><dd>5+ years</dd></div>
+              <div><dt>Currently at</dt><dd>SELISE Digital Platforms</dd><dd class="facts__sub">since May 2021</dd></div>
+              <div><dt>Main stack</dt><dd>C# · .NET · Azure</dd></div>
             </dl>
+            <div class="cta">
+              <button class="btn btn--ac" data-open="experience">See my experience →</button>
+              <button class="btn" data-open="projects">Projects</button>
+              <button class="btn" data-open="resume">Résumé</button>
+              <button class="btn" data-open="contact">Contact</button>
+            </div>
+            <p class="also">Also a competitive programmer: 2000+ problems solved, 3× ACM ICPC Dhaka Regional.</p>
             <ul class="links">
               <li><a href="https://github.com/anik-ewu" target="_blank" rel="noopener">GitHub</a></li>
               <li><a href="https://www.linkedin.com/in/sabbir-hasan-anik-2433a614b/" target="_blank" rel="noopener">LinkedIn</a></li>
               <li><a href="https://codeforces.com/profile/sabbir-hasan-anik" target="_blank" rel="noopener">Codeforces</a></li>
               <li><a href="mailto:sabbirhasananik@gmail.com">Email</a></li>
-              <li><button data-open="resume">Résumé</button></li>
             </ul>
           </div>
         </div>
@@ -145,7 +147,7 @@
       <!-- About.md -->
       <section class="pane doc" id="pane-about" data-name="About.md" hidden>
         <h2 class="md-h1"><span class="hash">#</span> About</h2>
-        <p class="scrub" id="scrub">I like problems with a clear verdict. At work that means services that stay up, designs that survive review and deploys that are boring. Off the clock it means a contest clock running down and one more test case to pass.</p>
+        <p class="scrub" id="scrub">I'm Sabbir, a software engineer with 5+ years of experience, currently at SELISE Digital Platforms. I like problems with a clear verdict. At work that means services that stay up, designs that survive review and deploys that are boring. Off the clock it means a contest clock running down and one more test case to pass.</p>
 
         <h3 class="md-h2"><span class="hash">##</span> What I do</h3>
         <p>
@@ -173,6 +175,8 @@
       <section class="pane doc" id="pane-experience" data-name="Experience.cs" hidden>
         <p class="code"><span class="k">namespace</span> <span class="t">SabbirHasan</span>.<span class="t">Career</span>;</p>
         <p class="code"><span class="c">/// &lt;summary&gt;Where I've worked and what I shipped.&lt;/summary&gt;</span></p>
+        <h2 class="md-h1">Experience</h2>
+        <p class="xp__lead">5+ years as a software engineer, all at <b>SELISE Digital Platforms</b>, where I work today.</p>
 
         <article class="xp">
           <p class="code xp__sig"><span class="k">public sealed class</span> <span class="t">SeliseDigitalPlatforms</span> : <span class="t">Employer</span></p>
@@ -182,7 +186,7 @@
                 <h2>Software Engineer</h2>
                 <p class="muted">SELISE Digital Platforms · Dhaka</p>
               </div>
-              <span class="badge mono">May 2021 → Present</span>
+              <span class="badge badge--now">Current · May 2021 – Present · 5+ yrs</span>
             </header>
             <p>Core engineer on <b>EcoHub</b>, an insurance platform used by top Swiss insurers. I own backend service design and lead the Angular client that uses it.</p>
             <ul class="checks">
@@ -206,7 +210,7 @@
                 <h2>B.Sc. in Computer Science &amp; Engineering</h2>
                 <p class="muted">East West University · Dhaka</p>
               </div>
-              <span class="badge mono">2016 → 2021</span>
+              <span class="badge">2016 – 2021</span>
             </header>
             <p>Competed in ACM ICPC Dhaka Regional three times, and later came back to organize the university's programming contests.</p>
           </div>
@@ -502,6 +506,7 @@
   <!-- STATUS BAR -->
   <footer class="status mono">
     <span class="status__item status__branch">⎇ main</span>
+    <span class="status__item status__who">Software Engineer @ SELISE · 5+ yrs</span>
     <span class="status__item hide-sm">✓ 0 errors, 0 warnings</span>
     <span class="status__spacer"></span>
     <span class="status__item" id="stLang">C#</span>

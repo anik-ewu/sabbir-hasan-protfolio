@@ -70,7 +70,7 @@
     crumbs.innerHTML = ['sabbir-hasan', f.dir, `<b>${f.name}</b>`].filter(Boolean).join('<i>›</i>');
     stLang.textContent = f.lang;
     $$('.file').forEach((b) => b.classList.toggle('is-active', b.dataset.file === id));
-    document.title = `${f.name} — Sabbir Hasan`;
+    document.title = id === 'program' ? 'Sabbir Hasan — Software Engineer' : `${f.name} · Sabbir Hasan — Software Engineer`;
     if (push && location.hash !== '#/' + id) history.replaceState(null, '', '#/' + id);
     ide.classList.remove('nav-open');
     onOpen[id] && onOpen[id]();
@@ -342,7 +342,8 @@
   // ───────── Typing line on Program.cs ─────────
   const typed = $('#typed');
   const phrases = ['building distributed services on Azure', 'designing CQRS + event-driven systems', 'on call for Swiss insurers', 'solving one more Codeforces problem'];
-  if (reduce) typed.textContent = phrases[0];
+  if (!typed) {}
+  else if (reduce) typed.textContent = phrases[0];
   else (async function loop() {
     for (let i = 0; ; i = (i + 1) % phrases.length) {
       const p = phrases[i];
