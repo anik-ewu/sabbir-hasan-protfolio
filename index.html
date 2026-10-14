@@ -9,10 +9,10 @@
   <meta property="og:description" content="Distributed .NET services, CQRS and event-driven systems on Azure. Competitive programmer.">
   <meta property="og:image" content="assets/img/team-stairs.jpg">
   <meta name="theme-color" content="#f4f1ea">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%2314130f'/><text x='50%' y='54%' text-anchor='middle' dominant-baseline='middle' font-family='Georgia,serif' font-size='38' fill='%23f4f1ea'>s</text><circle cx='47' cy='45' r='5' fill='%233ba55d'/></svg>">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%2314130f'/><text x='50%' y='54%' text-anchor='middle' dominant-baseline='middle' font-family='system-ui,sans-serif' font-weight='600' font-size='36' fill='%23f4f1ea'>s</text><circle cx='47' cy='45' r='5' fill='%233ba55d'/></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script>
     try { const t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
@@ -35,20 +35,22 @@
 
   <main id="top">
     <!-- HERO -->
-    <section class="hero wrap">
-      <p class="eyebrow mono reveal">Software Engineer · Dhaka, Bangladesh</p>
-      <h1 class="hero__title reveal">
-        Sabbir Hasan<br>
-        <em>builds systems that</em><br>
-        <em>get </em><span class="ac">Accepted.</span>
+    <section class="hero-wrap">
+    <canvas class="field" id="field" aria-hidden="true"></canvas>
+    <div class="hero wrap">
+      <p class="eyebrow mono intro" style="--d:0">Software Engineer · Dhaka, Bangladesh</p>
+      <h1 class="hero__title">
+        <span class="line"><span style="--d:1">Sabbir Hasan</span></span>
+        <span class="line"><em style="--d:2">builds systems that</em></span>
+        <span class="line"><span style="--d:3"><em>get </em><span class="ac">Accepted.</span></span></span>
       </h1>
       <div class="hero__grid">
-        <p class="hero__lede reveal">
+        <p class="hero__lede intro" style="--d:5">
           Backend-focused engineer with 5+ years building and operating enterprise .NET services
           for Swiss insurers — distributed REST APIs, CQRS and event-driven architecture on Azure,
           with production on-call ownership. Competitive programmer at heart.
         </p>
-        <div class="judge reveal" aria-label="Submission log">
+        <div class="judge intro" style="--d:6" aria-label="Submission log">
           <div class="judge__head mono"><span>#</span><span>Problem</span><span>Verdict</span></div>
           <ol class="judge__rows mono" id="judge">
             <li><span>01</span><span>Ship EcoHub backend</span><b>Accepted</b></li>
@@ -59,10 +61,12 @@
           </ol>
         </div>
       </div>
-      <div class="hero__cta reveal">
-        <a class="btn btn--solid" href="#contact">Get in touch</a>
-        <a class="btn" href="assets/sabbir_hasan_resume.pdf" target="_blank" rel="noopener">Résumé ↗</a>
+      <div class="hero__cta intro" style="--d:7">
+        <a class="btn btn--solid magnetic" href="#contact">Get in touch</a>
+        <a class="btn magnetic" href="assets/sabbir_hasan_resume.pdf" target="_blank" rel="noopener">Résumé ↗</a>
       </div>
+      <a class="scroll-cue mono intro" style="--d:9" href="#about" aria-label="Scroll to About"><i></i>scroll</a>
+    </div>
     </section>
 
     <!-- ABOUT -->
