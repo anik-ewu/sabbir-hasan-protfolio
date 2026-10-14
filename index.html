@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sabbir Hasan — Software Engineer</title>
+  <meta name="description" content="MD Sabbir Hasan — backend-focused software engineer building distributed .NET services on Azure. Competitive programmer, 2000+ problems solved.">
+  <meta property="og:title" content="Sabbir Hasan — Software Engineer">
+  <meta property="og:description" content="Distributed .NET services, CQRS and event-driven systems on Azure. Competitive programmer.">
+  <meta property="og:image" content="assets/img/team-stairs.jpg">
+  <meta name="theme-color" content="#f4f1ea">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%2314130f'/><text x='50%' y='54%' text-anchor='middle' dominant-baseline='middle' font-family='Georgia,serif' font-size='38' fill='%23f4f1ea'>s</text><circle cx='47' cy='45' r='5' fill='%233ba55d'/></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    try { const t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
+</head>
+<body>
+  <header class="nav">
+    <a href="#top" class="nav__mark" aria-label="Home">sh<span class="dot"></span></a>
+    <nav class="nav__links" aria-label="Sections">
+      <a href="#about"><span>A</span>About</a>
+      <a href="#work"><span>B</span>Work</a>
+      <a href="#projects"><span>C</span>Projects</a>
+      <a href="#contests"><span>D</span>Contests</a>
+      <a href="#contact"><span>E</span>Contact</a>
+    </nav>
+    <button class="theme" id="theme" aria-label="Toggle dark mode">
+      <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9z" fill="currentColor"/></svg>
+    </button>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero wrap">
+      <p class="eyebrow mono reveal">Software Engineer · Dhaka, Bangladesh</p>
+      <h1 class="hero__title reveal">
+        Sabbir Hasan<br>
+        <em>builds systems that</em><br>
+        <em>get </em><span class="ac">Accepted.</span>
+      </h1>
+      <div class="hero__grid">
+        <p class="hero__lede reveal">
+          Backend-focused engineer with 5+ years building and operating enterprise .NET services
+          for Swiss insurers — distributed REST APIs, CQRS and event-driven architecture on Azure,
+          with production on-call ownership. Competitive programmer at heart.
+        </p>
+        <div class="judge reveal" aria-label="Submission log">
+          <div class="judge__head mono"><span>#</span><span>Problem</span><span>Verdict</span></div>
+          <ol class="judge__rows mono" id="judge">
+            <li><span>01</span><span>Ship EcoHub backend</span><b>Accepted</b></li>
+            <li><span>02</span><span>Halve deploy time</span><b>Accepted</b></li>
+            <li><span>03</span><span>Solve 2000+ problems</span><b>Accepted</b></li>
+            <li><span>04</span><span>Mentor juniors</span><b>Accepted</b></li>
+            <li><span>05</span><span>Next challenge</span><b class="pending">Running<i>…</i></b></li>
+          </ol>
+        </div>
+      </div>
+      <div class="hero__cta reveal">
+        <a class="btn btn--solid" href="#contact">Get in touch</a>
+        <a class="btn" href="assets/sabbir_hasan_resume.pdf" target="_blank" rel="noopener">Résumé ↗</a>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section wrap">
+      <header class="section__head reveal"><span class="letter">A</span><h2>About</h2></header>
+      <div class="about">
+        <p class="about__big reveal">
+          I like problems with a clear verdict. At work that means services that stay up,
+          designs that survive review, and deploys that are boring. Off the clock it means
+          a contest clock running down and one more test case to pass.
+        </p>
+        <dl class="stats reveal">
+          <div><dt>5+</dt><dd>years shipping .NET in production</dd></div>
+          <div><dt>2000+</dt><dd>competitive programming problems solved</dd></div>
+          <div><dt>3×</dt><dd>ACM ICPC Dhaka Regional</dd></div>
+          <div><dt>150+</dt><dd>volunteer programming classes taught</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- WORK -->
+    <section id="work" class="section wrap">
+      <header class="section__head reveal"><span class="letter">B</span><h2>Work</h2></header>
+      <article class="job reveal">
+        <div class="job__meta">
+          <p class="mono muted">May 2021 — Present</p>
+          <p class="mono muted">Dhaka, BD</p>
+        </div>
+        <div class="job__body">
+          <h3>Software Engineer <span class="muted">at</span> SELISE Digital Platforms</h3>
+          <p class="job__intro">
+            Core engineer on <strong>EcoHub</strong>, an insurance platform used by top Swiss insurers —
+            owning backend service design and leading the Angular client that integrates it.
+          </p>
+          <ul class="ticks">
+            <li>Built scalable backend services and REST APIs in C#/.NET, applying CQRS, event-driven architecture and Domain-Driven Design across distributed services.</li>
+            <li>Cut build &amp; deploy time by <mark>50%</mark> by isolating translation delivery into its own pipeline (ngx-translate, POEditor).</li>
+            <li>Held on-call for Swiss client deployments — diagnosing incidents with Application Insights and Seq structured logs.</li>
+            <li>Automated cross-system data sync with Azure Functions and a HubSpot CRM integration.</li>
+            <li>Authored technical design docs and validated them with UI/UX and the client before implementation.</li>
+            <li>Mentored 3 junior engineers, owned code review and merge quality, ran sprint releases on Azure DevOps.</li>
+          </ul>
+          <p class="chips"><span>C#</span><span>.NET</span><span>CQRS</span><span>DDD</span><span>Azure</span><span>Angular</span><span>Cosmos DB</span><span>MongoDB</span></p>
+        </div>
+      </article>
+      <article class="job reveal">
+        <div class="job__meta">
+          <p class="mono muted">2016 — 2021</p>
+          <p class="mono muted">Dhaka, BD</p>
+        </div>
+        <div class="job__body">
+          <h3>B.Sc. in CSE <span class="muted">at</span> East West University</h3>
+          <p class="job__intro">Plus <strong>Microsoft Certified: Azure Fundamentals (AZ-900)</strong>, July 2025.</p>
+        </div>
+      </article>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section wrap">
+      <header class="section__head reveal"><span class="letter">C</span><h2>Projects</h2></header>
+
+      <article class="project reveal">
+        <div class="project__text">
+          <p class="mono muted">01 / Headless CMS + DXP</p>
+          <h3>OpenDXP</h3>
+          <p>
+            A digital experience platform on Clean Architecture with CQRS (MediatR): draft → publish versioning,
+            a REST delivery API and OpenIddict OIDC auth with PKCE, refresh-token rotation and resource-based policies.
+          </p>
+          <p>
+            A Kafka transactional outbox fans one <code>PagePublished</code> event out to five independent consumers.
+            Audience targeting uses SHA-256 visitor bucketing for A/B splits; pgvector powers related-page search;
+            a Helm chart was verified end to end on a live cluster.
+          </p>
+          <p class="chips"><span>.NET 8</span><span>Angular 20</span><span>PostgreSQL</span><span>Redis</span><span>Kafka</span><span>pgvector</span><span>Kubernetes</span></p>
+          <a class="link" href="https://github.com/anik-ewu/open-dxp-project" target="_blank" rel="noopener">View on GitHub ↗</a>
+        </div>
+        <figure class="fanout" aria-label="One PagePublished event fans out to five consumers">
+          <svg viewBox="0 0 360 300" role="img">
+            <defs>
+              <marker id="arr" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 8 4 0 8z" fill="currentColor"/></marker>
+            </defs>
+            <g class="fanout__src">
+              <rect x="10" y="126" width="118" height="48" rx="10"/>
+              <text x="69" y="148" text-anchor="middle" class="t1">PagePublished</text>
+              <text x="69" y="164" text-anchor="middle" class="t2">outbox → kafka</text>
+            </g>
+            <g class="fanout__lines" marker-end="url(#arr)">
+              <path d="M128 150 C 180 150, 180 34, 210 34"/>
+              <path d="M128 150 C 180 150, 180 92, 210 92"/>
+              <path d="M128 150 L 210 150"/>
+              <path d="M128 150 C 180 150, 180 208, 210 208"/>
+              <path d="M128 150 C 180 150, 180 266, 210 266"/>
+            </g>
+            <g class="fanout__dst">
+              <rect x="212" y="16" width="144" height="36" rx="8"/><text x="284" y="39" text-anchor="middle">cache invalidation</text>
+              <rect x="212" y="74" width="144" height="36" rx="8"/><text x="284" y="97" text-anchor="middle">search re-index</text>
+              <rect x="212" y="132" width="144" height="36" rx="8"/><text x="284" y="155" text-anchor="middle">audit trail</text>
+              <rect x="212" y="190" width="144" height="36" rx="8"/><text x="284" y="213" text-anchor="middle">experiment analytics</text>
+              <rect x="212" y="248" width="144" height="36" rx="8"/><text x="284" y="271" text-anchor="middle">auto-tagging</text>
+            </g>
+          </svg>
+          <figcaption class="mono muted">one event · five consumers</figcaption>
+        </figure>
+      </article>
+
+      <article class="project reveal">
+        <div class="project__text">
+          <p class="mono muted">02 / Feature flags</p>
+          <h3>FlagMaster</h3>
+          <p>
+            A multi-tenant feature-flag platform with percentage rollouts and targeting rules.
+            The evaluation API is Redis-cached and built on Clean Architecture and CQRS.
+          </p>
+          <p class="chips"><span>.NET 8</span><span>Angular</span><span>PostgreSQL</span><span>Redis</span></p>
+          <a class="link" href="https://github.com/anik-ewu/feature-flag" target="_blank" rel="noopener">View on GitHub ↗</a>
+        </div>
+        <figure class="flags" aria-label="Feature flag rollout illustration">
+          <div class="flag"><span class="mono">new-checkout</span><label class="switch"><input type="checkbox" checked><i></i></label><div class="bar"><b style="--p:25%"></b></div><span class="mono muted">25%</span></div>
+          <div class="flag"><span class="mono">dark-mode</span><label class="switch"><input type="checkbox" checked><i></i></label><div class="bar"><b style="--p:100%"></b></div><span class="mono muted">100%</span></div>
+          <div class="flag"><span class="mono">ai-tagging</span><label class="switch"><input type="checkbox"><i></i></label><div class="bar"><b style="--p:0%"></b></div><span class="mono muted">0%</span></div>
+          <figcaption class="mono muted">tenant: acme · rule: country = CH</figcaption>
+        </figure>
+      </article>
+    </section>
+
+    <!-- CONTESTS -->
+    <section id="contests" class="section wrap">
+      <header class="section__head reveal"><span class="letter">D</span><h2>Contest log</h2></header>
+      <div class="contest">
+        <ol class="log reveal">
+          <li><span class="mono">2018–20</span><p>ACM ICPC Dhaka Regional — three appearances</p></li>
+          <li><span class="mono">2020</span><p>Top 19 / 150 teams, National Collegiate Programming Contest</p></li>
+          <li><span class="mono">2019</span><p>1st place, Intra University Telco Code War</p></li>
+          <li><span class="mono">2019</span><p>Top 5 / 50 teams, UITS Inter-University</p></li>
+          <li><span class="mono">2023</span><p>Official tester, Codeforces Round 886</p></li>
+          <li><span class="mono">2022–23</span><p>Organized EWU intra-university programming contests</p></li>
+        </ol>
+        <p class="contest__note reveal">
+          2000+ problems across Codeforces, UVa and other judges, 15+ inter-university contests,
+          and 150+ volunteer classes taught to the next batch.
+          <a class="link" href="https://codeforces.com/profile/sabbir-hasan-anik" target="_blank" rel="noopener">Codeforces profile ↗</a>
+        </p>
+      </div>
+
+      <div class="gallery" id="gallery">
+        <figure class="g g--wide reveal"><img src="assets/img/team-stairs.jpg" alt="Contest teams gathered on red stairs" loading="lazy"><figcaption>Teammates &amp; friends</figcaption></figure>
+        <figure class="g reveal"><img src="assets/img/sub-2019.jpg" alt="Team at the Brain Craft – SUB Inter University Programming Contest 2019" loading="lazy"><figcaption>SUB Inter-University, 2019</figcaption></figure>
+        <figure class="g reveal"><img src="assets/img/award.jpg" alt="Receiving an award on stage" loading="lazy"><figcaption>On stage</figcaption></figure>
+        <figure class="g reveal"><img src="assets/img/icpc-hall.jpg" alt="Hundreds of contestants on a programming contest floor" loading="lazy"><figcaption>Contest floor</figcaption></figure>
+        <figure class="g reveal"><img src="assets/img/team-campus.jpg" alt="Three teammates on a tree-lined campus road" loading="lazy"><figcaption>Team on campus, 2019</figcaption></figure>
+        <figure class="g g--wide reveal"><img src="assets/img/ewu-contest.jpg" alt="Participants and organizers of an EWU intra-university programming contest" loading="lazy"><figcaption>EWU intra-university contest</figcaption></figure>
+        <figure class="g reveal"><img src="assets/img/iupc-2018.jpg" alt="Rows of contestants at IUPC 2018" loading="lazy"><figcaption>IUPC, 2018</figcaption></figure>
+        <figure class="g reveal"><img src="assets/img/nsu-2019.jpg" alt="Team in red contest shirts at North South University" loading="lazy"><figcaption>NSU, 2019</figcaption></figure>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section wrap">
+      <header class="section__head reveal"><span class="letter">·</span><h2>Toolbox</h2></header>
+      <dl class="skills reveal">
+        <div><dt>Languages</dt><dd>C# · TypeScript · C++ · JavaScript · SQL</dd></div>
+        <div><dt>Backend</dt><dd>ASP.NET Core · MediatR (CQRS) · REST · Kafka · Clean Architecture · DDD</dd></div>
+        <div><dt>Frontend</dt><dd>Angular · HTML · CSS</dd></div>
+        <div><dt>Data</dt><dd>PostgreSQL · EF Core · Redis · Cosmos DB · MongoDB · MySQL</dd></div>
+        <div><dt>Platform</dt><dd>Azure (Functions, DevOps, Blob) · Docker · Kubernetes · GitHub Actions</dd></div>
+        <div><dt>Quality &amp; Ops</dt><dd>Unit testing · Application Insights · Seq · Agile / Scrum</dd></div>
+      </dl>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section wrap contact">
+      <header class="section__head reveal"><span class="letter">E</span><h2>Contact</h2></header>
+      <p class="contact__big reveal">Have a hard problem?<br><em>Let's submit a solution.</em></p>
+      <a class="contact__mail reveal" href="mailto:sabbirhasananik@gmail.com">sabbirhasananik@gmail.com</a>
+      <ul class="socials reveal">
+        <li><a href="https://github.com/anik-ewu" target="_blank" rel="noopener">GitHub ↗</a></li>
+        <li><a href="https://www.linkedin.com/in/sabbir-hasan-anik-2433a614b/" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+        <li><a href="https://codeforces.com/profile/sabbir-hasan-anik" target="_blank" rel="noopener">Codeforces ↗</a></li>
+        <li><a href="assets/sabbir_hasan_resume.pdf" target="_blank" rel="noopener">Résumé ↗</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="foot wrap mono muted">
+    <span>© <span id="year">2026</span> MD Sabbir Hasan</span>
+    <span>Verdict: <b class="ac-text">Accepted</b> · 0 ms</span>
+  </footer>
+
+  <div class="lightbox" id="lightbox" hidden>
+    <button aria-label="Close">×</button>
+    <img alt="">
+    <p class="mono"></p>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
