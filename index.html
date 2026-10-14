@@ -8,8 +8,8 @@
   <meta property="og:title" content="Sabbir Hasan — Software Engineer">
   <meta property="og:description" content="Distributed .NET services, CQRS and event-driven systems on Azure. Competitive programmer.">
   <meta property="og:image" content="assets/img/team-stairs.jpg">
-  <meta name="theme-color" content="#f4f1ea">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%2314130f'/><text x='50%' y='54%' text-anchor='middle' dominant-baseline='middle' font-family='system-ui,sans-serif' font-weight='600' font-size='36' fill='%23f4f1ea'>s</text><circle cx='47' cy='45' r='5' fill='%233ba55d'/></svg>">
+  <meta name="theme-color" content="#f7f7f8">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%230e0e12'/><text x='50%' y='54%' text-anchor='middle' dominant-baseline='middle' font-family='system-ui,sans-serif' font-weight='600' font-size='36' fill='%23f7f7f8'>s</text><circle cx='47' cy='45' r='5' fill='%235b5bd6'/></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -175,7 +175,41 @@
 
       <article class="project reveal">
         <div class="project__text">
-          <p class="mono muted">02 / Feature flags</p>
+          <p class="mono muted">02 / Multi-tenant SaaS</p>
+          <h3>Coaching Center Fee Manager</h3>
+          <p>
+            Fee tracking and due reminders for small coaching centers in Bangladesh: students, fee plans,
+            monthly dues, payments and an unpaid list, as a mobile-first Angular app on a .NET API.
+            Each design choice is written down with its alternatives and trade-offs.
+          </p>
+          <p>
+            Multi-tenant on a shared PostgreSQL database. Cookie auth is hardened with atomic lockout counting,
+            per-IP rate limiting and security stamps that end every session on reset. Payments are immutable,
+            and reminders only go out after a person reviews who will get one.
+          </p>
+          <p class="chips"><span>.NET 10</span><span>Angular</span><span>PostgreSQL</span><span>EF Core</span><span>Docker</span><span>GitHub Actions</span></p>
+          <a class="link" href="https://github.com/anik-ewu/tuition-management-sass" target="_blank" rel="noopener">View on GitHub ↗</a>
+        </div>
+        <figure class="dues" aria-label="Monthly dues illustration">
+          <div class="dues__head">
+            <span class="mono muted">October</span>
+            <span class="mono muted">collected / expected</span>
+          </div>
+          <p class="dues__sum"><b>৳ 84,500</b> <span class="muted">/ ৳ 1,12,000</span></p>
+          <div class="dues__bar"><b style="--p:75%"></b></div>
+          <ul class="dues__list">
+            <li><span>Class 8 · Batch A</span><span class="tag tag--ok mono">paid</span></li>
+            <li><span>Class 9 · Batch B</span><span class="tag mono">3 due</span></li>
+            <li><span>SSC Physics</span><span class="tag mono">5 due</span></li>
+          </ul>
+          <span class="dues__btn mono">Review 8 reminders →</span>
+          <figcaption class="mono muted">a person presses send, never a cron job</figcaption>
+        </figure>
+      </article>
+
+      <article class="project reveal">
+        <div class="project__text">
+          <p class="mono muted">03 / Feature flags</p>
           <h3>FlagMaster</h3>
           <p>
             A multi-tenant feature-flag platform with percentage rollouts and targeting rules.
@@ -191,6 +225,21 @@
           <figcaption class="mono muted">tenant: acme · rule: country = CH</figcaption>
         </figure>
       </article>
+
+      <div class="more">
+        <a class="card reveal" href="https://github.com/anik-ewu/devforabuck" target="_blank" rel="noopener">
+          <p class="mono muted">04 / Booking platform</p>
+          <h4>Dev for a Buck <span class="arrow">↗</span></h4>
+          <p>Book CV reviews and career consultations. Users book and manage slots; admins approve and schedule. Microsoft Entra External ID with Google and Microsoft SSO over OAuth 2.0 PKCE.</p>
+          <p class="chips"><span>.NET 8</span><span>CQRS</span><span>Angular 17</span><span>Cosmos DB</span><span>Entra ID</span></p>
+        </a>
+        <a class="card reveal" href="https://anik-ewu.github.io/dhaka-digital-diagonistic-center/" target="_blank" rel="noopener">
+          <p class="mono muted">05 / Client website · live</p>
+          <h4>Dhaka Digital Diagnostic Center <span class="arrow">↗</span></h4>
+          <p>Website for a diagnostic center in Faridpur with a Bangla ⇄ English switch, a doctor directory filtered by specialty, and services with fees. All content lives in one data file the staff can edit.</p>
+          <p class="chips"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Bangla / English</span><span>GitHub Pages</span></p>
+        </a>
+      </div>
     </section>
 
     <!-- CONTESTS -->
